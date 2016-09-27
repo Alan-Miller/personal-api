@@ -32,7 +32,8 @@ module.exports = {
     res.status(200).json(typeArray);
   },
   changeName: function(req, res, next) {
-    alan.name = req.body.name;
+    console.log(req.body);
+    res.status(200).json(alan);
   },
   changeLocation: function(req, res, next) {
     alan.location = req.body.location;
