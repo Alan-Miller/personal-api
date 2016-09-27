@@ -82,7 +82,7 @@ Now we can access any methods that we put inside of our `mainCtrl` or `middlewar
 app.use(middleware.addHeaders);
 ```
 
-As simple as that, we no longer have to individually apply headers to every single endpoint! Remember that the `app.use()` method just applies a function to every request made before passing it on to the next function or eventually sending a response.
+As simple as that, we no longer have to individually apply headers to every single endpoint! Remember that the `app.use()` method just applies a function to every request made before passing it on to the next function or eventually sending a response.  
 
 #### Step 3: Build read-only endpoints
 * These endpoints will return data (see below)
@@ -90,23 +90,23 @@ As simple as that, we no longer have to individually apply headers to every sing
 * These endpoints will call functions from your controller rather than having them declared inside of the endpoint. i.e `app.get('/name', mainCtrl.getName)` rather than `app.get('/name', function(req, res) { /*...*/});`
 
 ###### `GET /name`
-- returns: Your name (e.g. Joe Sandwiches) in a JSON object: 
+- returns: Your name (e.g. Joe Sandwiches) in a JSON object:
 `{ "name": "Donald Duck" }`
 
 ###### `GET /location`
-- returns: Your location (e.g. Seattle, WA) in a JSON object: 
+- returns: Your location (e.g. Seattle, WA) in a JSON object:
 `{ "location": "Timbuktu" }`
 
 ###### `GET /occupations`
-- returns: Your past occupations as an array in a JSON object: 
+- returns: Your past occupations as an array in a JSON object:
 `{ "occupations": ["Thwarting Buggs Bunny", "Tomfoolery"] }`
 
 ###### `GET /occupations/latest`
-- returns: The last/current job you have/had. The occupations will be stored in an array, but this method returns the last item of the array in a JSON reponse: 
+- returns: The last/current job you have/had. The occupations will be stored in an array, but this method returns the last item of the array in a JSON reponse:
 `{ "latestOccupation": "Tomfoolery" }`
 
 ###### `GET /hobbies`
-- returns: Your hobbies (e.g. Fishing, Swimming, etc.) as an array of objects in a JSON object: 
+- returns: Your hobbies (e.g. Fishing, Swimming, etc.) as an array of objects in a JSON object:
 ```javascript
 { hobbies: [{
     "name": "Watching cartoons",
