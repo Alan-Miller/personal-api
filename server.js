@@ -8,7 +8,12 @@ var app = express();
 
 app.use(middleware.addHeaders);
 
-app.get('/', mainCtrl.getName);
+app.get('/name', mainCtrl.getName);
+app.get('/location', mainCtrl.getLocation);
+app.get('/occupations', mainCtrl.getOccupations);
+app.get('/occupations/latest', mainCtrl.getOccupationsLatest);
+app.get('/hobbies', mainCtrl.getHobbies);
+app.get('/hobbies/:type', mainCtrl.getHobbiesByType);
 
 app.listen(3000, function() {
   console.log('Listening on 3000');
