@@ -17,7 +17,12 @@ module.exports = {
     res.status(200).json(alan.hobbies);
   },
   getHobbiesByType: function(req, res, next) {
-    req.params.type
-    res.status(200).json(alan.hobbies);
+    var typeArray = [];
+    alan.hobbies.forEach(function(elem, index) {
+      if (elem.type === req.params.type) {
+        typeArray.push(elem.hobby);
+      }
+    });
+    res.status(200).json(typeArray);
   }
 };
