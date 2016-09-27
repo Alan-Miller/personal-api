@@ -32,16 +32,19 @@ module.exports = {
     res.status(200).json(typeArray);
   },
   changeName: function(req, res, next) {
-    console.log(req.body);
+    alan.name = req.body.name;
     res.status(200).json(alan);
   },
   changeLocation: function(req, res, next) {
     alan.location = req.body.location;
+    res.status(200).json(alan);
   },
   addHobby: function(req, res, next) {
     alan.hobbies.push(req.body);
+    res.status(200).json(alan.hobbies);
   },
   addOccupation: function(req, res, next) {
-    alan.occupations.push(req.body);
+    alan.occupations.push(req.body[0]);
+    res.status(200).json(alan.occupations);
   }
 };

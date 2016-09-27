@@ -6,6 +6,7 @@ var mainCtrl = require('./controllers/mainCtrl.js');
 
 var app = express();
 
+app.use(bodyParser.json());
 app.use(middleware.addHeaders);
 
 app.get('/name', mainCtrl.getName);
