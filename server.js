@@ -8,6 +8,8 @@ var app = express();
 
 app.use(middleware.addHeaders);
 
+app.get('/', mainCtrl.getName);
+
 app.listen(3000, function() {
   console.log('Listening on 3000');
 });

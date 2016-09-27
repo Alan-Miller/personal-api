@@ -1,3 +1,5 @@
+// var alan = require('./people/aam.js');
+
 module.exports = {
 
   addHeaders: function(req, res, next) {
