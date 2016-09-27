@@ -15,6 +15,12 @@ app.get('/occupations/latest', mainCtrl.getOccupationsLatest);
 app.get('/hobbies', mainCtrl.getHobbies);
 app.get('/hobbies/:type', mainCtrl.getHobbiesByType);
 
+app.put('/name', mainCtrl.changeName);
+app.put('/location', mainCtrl.changeLocation);
+
+app.post('/hobbies', mainCtrl.addHobby);
+app.post('/occupations', mainCtrl.addOccupation);
+
 app.listen(3000, function() {
   console.log('Listening on 3000');
 });

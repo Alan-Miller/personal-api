@@ -8,7 +8,13 @@ module.exports = {
     res.status(200).json(alan.location);
   },
   getOccupations: function(req, res, next) {
-    res.status(200).json(alan.occupations);
+    var jobs = alan.occupations;
+    if (req.query.order === 'asc') {
+      jobs = jobs.sort();
+    } else if (req.query.order === 'desc') {
+      jobs = jobs.sort().reverse();
+    }
+    res.status(200).json(jobs);
   },
   getOccupationsLatest: function(req, res, next) {
     res.status(200).json(alan.occupations.reverse()[0]);
@@ -24,5 +30,17 @@ module.exports = {
       }
     });
     res.status(200).json(typeArray);
+  },
+  changeName: function(req, res, next) {
+    alan.name = req.body.name;
+  },
+  changeLocation: function(req, res, next) {
+    alan.location = req.body.location;
+  },
+  addHobby: function(req, res, next) {
+    alan.hobbies.push(req.body);
+  },
+  addOccupation: function(req, res, next) {
+    alan.occupations.push(req.body);
   }
 };
